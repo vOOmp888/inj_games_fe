@@ -57,7 +57,7 @@ export const Eligibility = () => {
     <div className="w-full flex flex-col max-w-[45rem] items-center justify-center gap-6">
       <div className="w-full flex flex-col gap-8">
         <div className="flex flex-col items-center justify-center gap-1">
-          <h1 className="text-4xl font-bold text-accent_fff font-sans">
+          <h1 className="text-4xl font-bold text-accent_fff font-sans text-center">
             Welcome to{" "}
             <span className="text-secondary font-joti_one text-5xl">vOOmp</span>
           </h1>
