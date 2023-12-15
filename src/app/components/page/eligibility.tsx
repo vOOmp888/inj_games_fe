@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { isCosmosWallet, Wallet } from "@injectivelabs/wallet-ts";
 import Confetti from "react-dom-confetti";
 import { FaTwitter } from "react-icons/fa";
 import { LuLoader2 } from "react-icons/lu";
@@ -8,6 +9,7 @@ import { checkEligibility } from "@/app/handlers/checkEligibility";
 
 import { Input } from "../ui/input";
 import Button from "../ui/button";
+import { toast } from "react-toastify";
 
 const config = {
   angle: 107,
@@ -40,12 +42,20 @@ export const Eligibility = () => {
     e.preventDefault();
     setIsFetching(true);
     try {
+      if (!walletAddress.startsWith("inj") || walletAddress.length !== 42) {
+        toast.error("string provided is not an injective wallet", {
+          progress: undefined,
+        });
+        setIsFetching(false);
+        return;
+      }
       const data = await checkEligibility(walletAddress);
       setIsEligible(data.data.isEligible);
       setIsFetching(false);
     } catch (err) {
+      toast.error("Something went wrong", { progress: undefined });
+    } finally {
       setIsFetching(false);
-      console.log(err);
     }
   };
 
@@ -111,7 +121,7 @@ export const Eligibility = () => {
                 🎉 Your address is whitelisted
               </p>
               <a
-                href="https://twitter.com/intent/tweet?text=I%20AM%20WHITELISTED%20TO%20GET%20A%20vOOmp%20%23vOOmp%20%40v00mp"
+                href="https://twitter.com/intent/tweet?text=Excited%20that%20I%20am%20Whitelisted%20%F0%9F%A5%B3%0ANew%20era%20on%20%23Injective%20by%20%40v00mp%20%F0%9F%8D%BB%0ACheck%20if%20you're%20Whitelisted%20%F0%9F%91%87%F0%9F%8F%BC%0Ahttps%3A%2F%2Fwhitelist.voomp.xyz%2F&media=https://drive.google.com/uc?id=1ji8Eh3u-bLtYqNf6ItkUb1Pp1s1yKl_6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
