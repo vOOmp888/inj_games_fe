@@ -77,7 +77,7 @@ export const Eligibility = () => {
           </p>
         </div>
         <form
-          className="w-full flex flex-col gap-4 mb-8"
+          className="w-full flex flex-col gap-4"
           onSubmit={handleCheckEligibility}
         >
           <Input
@@ -111,7 +111,7 @@ export const Eligibility = () => {
           </div>
         </form>
       </div>
-      <div className="w-full">
+      <div className="w-full mb-8">
         <div className="w-full">
           {isEligible === null ? (
             ""
