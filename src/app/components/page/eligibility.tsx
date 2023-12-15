@@ -78,7 +78,7 @@ export const Eligibility = () => {
             placeholder="input wallet address"
             value={walletAddress}
           />
-          <div className="w-full flex gap-6 items-center">
+          <div className="w-full flex gap-6 items-center flex-wrap md-flex-nowrap">
             <Button
               variant="accent"
               className="w-full gap-8 text-base text-accent_fff p-6 font-joti_one"
