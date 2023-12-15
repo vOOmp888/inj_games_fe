@@ -1,6 +1,3 @@
-import Button from "./ui/button";
-import Select from "./select";
-
 const DrawEnd = () => {
   return (
     <div className="w-full p-6 rounded-lg flex flex-col  border-[0.5px] border-accent_fff text-accent_fff bg-accent_000 ">

@@ -41,7 +41,7 @@ export const Eligibility = () => {
     setIsFetching(true);
     try {
       const data = await checkEligibility(walletAddress);
-      setIsEligible(data.success);
+      setIsEligible(data.data.isEligible);
       setIsFetching(false);
     } catch (err) {
       console.log(err);

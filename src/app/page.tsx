@@ -1,5 +1,3 @@
-"use client";
-
 import { Eligibility } from "./components/page/eligibility";
 
 export default function Home() {

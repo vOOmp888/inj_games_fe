@@ -29,7 +29,7 @@ const NFTCard = ({ img, multiplier, nftName, isStaked }: IProps) => {
       <div className="flex gap-4 font-joti_one  md:mt-[-48px] flex-wrap">
         <div className="w-[150px] relative h-[40px] border border-tertiary_light rounded-lg flex items-center p-2">
           <span className="absolute bg-accent_fff w-[60px] h-[25px] flex items-center justify-center font-sans font-bold text-sm rounded top-[-36px]">
-            {multiplier}x
+            {multiplier}
           </span>
           <p className="text-base text-accent_fff text-tertiary">{nftName}</p>
         </div>
