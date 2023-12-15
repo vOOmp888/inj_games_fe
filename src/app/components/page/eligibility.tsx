@@ -77,7 +77,7 @@ export const Eligibility = () => {
           </p>
         </div>
         <form
-          className="w-full flex flex-col gap-4"
+          className="w-full flex flex-col gap-4 mb-8"
           onSubmit={handleCheckEligibility}
         >
           <Input
