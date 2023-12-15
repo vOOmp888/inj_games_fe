@@ -44,6 +44,7 @@ export const Eligibility = () => {
       setIsEligible(data.data.isEligible);
       setIsFetching(false);
     } catch (err) {
+      setIsFetching(false);
       console.log(err);
     }
   };
